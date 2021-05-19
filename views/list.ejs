@@ -1,0 +1,30 @@
+<%-include("header")-%>
+<div class="box" id="heading">
+  <h1><%=titleList%></h1>
+</div>
+<div class="box">
+  <%if(todoItems.length>0){%>
+    <%todoItems.forEach(function(element){%>
+      <form action="/delete" method="post">
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%=element.id%>" onChange="this.form.submit()" class="input-list">
+          <p><%=element.name%></p>
+        </div>
+        <input type="hidden" name="listInput" value="<%=titleList%>" class="input-list"> </input>
+      </form>
+
+    <%})}%>
+
+    <form action="/" method="post" class="item">
+        <input name="todoItem"type="text" placeholder="new item" autocomplete="off" class="input-list">
+        <button type="submit" name="listButton" value="<%=titleList%>" class="btn-add">+</button>
+  </form>
+
+
+</div>
+<div class="logout">  
+  <form action="/logout" method="post">
+      <button type="submit" name="logoutButton" class="btn btn-outline btn-logout">LOGOUT</button>
+    </form>
+</div>
+<%-include("footer")-%>

@@ -1,0 +1,13 @@
+<%-include("header")-%>
+<div class="box" id="heading">
+  <h1>Please login or register</h1>
+</div>
+<div class="box">
+    <form action="/log" method="post" class="signin">
+      <button type="submit" class="btn btn-lg btn-block btn-outline btn-welcome-log" >LogIn</button>
+    </form>
+    <form action="/reg" method="post" class="signin">
+      <button type="submit" class="btn btn-lg btn-block btn-welcome-reg" >Register</button>
+    </form>
+</div>
+<%-include("footer")-%>
